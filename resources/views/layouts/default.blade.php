@@ -12,7 +12,7 @@
     @include('sections.frontsite.intro')
     @yield('content')
     @include('components.frontsite.footer')
-    @include('components.frontsite.script')
+    @include('includes.frontsite.script')
 </body>
 
 </html>
