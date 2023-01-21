@@ -9,7 +9,7 @@
 
 <body>
     @include('components.frontsite.header')
-    @include('sections.frontsite.intro')
+    @include('sections.frontsite.intro.index')
     @yield('content')
     @include('components.frontsite.footer')
     @include('includes.frontsite.script')
