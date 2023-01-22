@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Frontsite;
 
-use Illuminate\Http\Request;
-use App\Models\MasterData\Intro;
-use App\Models\MasterData\Service;
 use App\Http\Controllers\Controller;
 use App\Models\MasterData\About;
+use App\Models\MasterData\Fact;
+use App\Models\MasterData\Intro;
+use App\Models\MasterData\Service;
 use App\Models\MasterData\Skill;
+use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
@@ -18,20 +19,23 @@ class LandingController extends Controller
      */
     public function index()
     {
-        //table intros
+        // table intros
         $intros = Intro::all();
 
-        //table services
+        // table services
         $services = Service::all();
-        $filter_services = Service::orderBy('created_at','desc')->limit(3)->get();
+        $filter_services = Service::orderBy('created_at', 'desc')->limit(3)->get();
 
-        //table abouts
+        // table abouts
         $abouts = About::all();
 
-        //table skills
+        // table skills
         $skills = Skill::all();
 
-        return view('pages.frontsite.index', compact('intros','services', 'filter_services','abouts', 'skills'));
+        // table facts
+        $facts = Fact::all();
+
+        return view('pages.frontsite.index', compact('intros', 'services', 'filter_services', 'abouts', 'skills', 'facts'));
     }
 
     /**
@@ -47,7 +51,6 @@ class LandingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -58,7 +61,8 @@ class LandingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,7 +73,8 @@ class LandingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -80,8 +85,8 @@ class LandingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -92,7 +97,8 @@ class LandingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
