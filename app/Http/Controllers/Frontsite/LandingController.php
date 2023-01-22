@@ -7,6 +7,7 @@ use App\Models\MasterData\Intro;
 use App\Models\MasterData\Service;
 use App\Http\Controllers\Controller;
 use App\Models\MasterData\About;
+use App\Models\MasterData\Skill;
 
 class LandingController extends Controller
 {
@@ -27,7 +28,10 @@ class LandingController extends Controller
         //table abouts
         $abouts = About::all();
 
-        return view('pages.frontsite.index', compact('intros','services', 'filter_services','abouts'));
+        //table skills
+        $skills = Skill::all();
+
+        return view('pages.frontsite.index', compact('intros','services', 'filter_services','abouts', 'skills'));
     }
 
     /**
