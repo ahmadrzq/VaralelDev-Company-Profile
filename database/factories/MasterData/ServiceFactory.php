@@ -20,7 +20,7 @@ class ServiceFactory extends Factory
     {
         return [
             'title' => $this->faker->words(rand(1,3),true),
-            'description' => $this->faker->unique()->sentence(),
+            'description' => $this->faker->unique()->sentences(4,true),
         ];
     }
 }
