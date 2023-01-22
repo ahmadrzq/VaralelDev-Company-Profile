@@ -13,11 +13,11 @@
                     {{-- <div class="carousel-item {{$loop->iteration == 1 ? 'active' : ''}}"> --}}
                     <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
                         <div class="carousel-background"><img
-                                src="{{ asset('assets/frontsite/img/intro-carousel/1.jpg') }}" alt=""></div>
+                                src="{{ url(Storage::url($intro_item->photo)) ?? ''}}" alt=""></div>
                         <div class="carousel-container">
                             <div class="carousel-content">
-                                <h2>{{ $intro_item->title }}</h2>
-                                <p>{{ $intro_item->description }}</p>
+                                <h2>{{ $intro_item->title ?? ''}}</h2>
+                                <p>{{ $intro_item->description ?? ''}}</p>
                                 <a href="#featured-services" class="btn-get-started scrollto">Get Started</a>
                             </div>
                         </div>

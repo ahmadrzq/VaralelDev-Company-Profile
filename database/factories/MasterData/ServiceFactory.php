@@ -2,6 +2,7 @@
 
 namespace Database\Factories\MasterData;
 
+use App\Models\MasterData\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class ServiceFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->words(rand(1,3),true),
+            'description' => $this->faker->unique()->sentence(),
         ];
     }
 }
