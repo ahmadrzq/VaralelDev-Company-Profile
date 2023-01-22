@@ -13,7 +13,7 @@ class UpdateIntroRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class UpdateIntroRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+            'description' => [
+                'required',
+                'string',
+                'max:999',
+            ],
+            'photo' => [
+                'nullable',
+                'mimes:jpeg,png',
+                'max:10000',
+            ],
         ];
     }
 }

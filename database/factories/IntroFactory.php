@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\MasterData\Intro;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class IntroFactory extends Factory
 {
+    protected $model = Intro::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +19,8 @@ class IntroFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->words(rand(3,6),true),
+            'description' => $this->faker->unique()->sentence(),
         ];
     }
 }
