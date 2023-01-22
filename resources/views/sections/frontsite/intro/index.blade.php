@@ -10,7 +10,8 @@
             <div class="carousel-inner" role="listbox">
 
                 @forelse ($intros as $key => $intro_item)
-                    <div class="carousel-item active">
+                    {{-- <div class="carousel-item {{$loop->iteration == 1 ? 'active' : ''}}"> --}}
+                    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
                         <div class="carousel-background"><img
                                 src="{{ asset('assets/frontsite/img/intro-carousel/1.jpg') }}" alt=""></div>
                         <div class="carousel-container">
