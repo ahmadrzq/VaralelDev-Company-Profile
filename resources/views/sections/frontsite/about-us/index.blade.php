@@ -15,15 +15,22 @@
         <div class="row about-cols">
 
             @forelse ($abouts as $key => $abouts_item)
-                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-md-4 wow fadeInUp"
+                @if ($abouts_item->id == 1)
+
+                @elseif ($abouts_item->id == 2)
+                    data-wow-delay="0.1s"
+                @else
+                    data-wow-delay="0.2s"
+                @endif>
                     <div class="about-col">
                         <div class="img">
                             <img src="img/about-plan.jpg" alt="" class="img-fluid">
                             <div class="icon"><i class="ion-ios-list-outline"></i></div>
                         </div>
-                        <h2 class="title"><a href="#">{{$abouts_item->title ?? ''}}</a></h2>
+                        <h2 class="title"><a href="#">{{ $abouts_item->title ?? '' }}</a></h2>
                         <p>
-                            {{$abouts_item->description ?? ''}}
+                            {{ $abouts_item->description ?? '' }}
                         </p>
                     </div>
                 </div>
