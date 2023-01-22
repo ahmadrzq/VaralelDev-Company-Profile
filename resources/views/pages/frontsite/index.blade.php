@@ -1,6 +1,6 @@
 @extends('layouts.default')
-
 @section('content')
+    @include('sections.frontsite.intro.index')
     <main id="main">
         @include('sections.frontsite.featured-services.index')
         @include('sections.frontsite.about-us.index')

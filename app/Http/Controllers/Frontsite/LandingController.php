@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontsite;
 
 use App\Http\Controllers\Controller;
+use App\Models\MasterData\Intro;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -14,7 +15,8 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('pages.frontsite.index');
+        $intros = Intro::all();
+        return view('pages.frontsite.index', compact('intros'));
     }
 
     /**
