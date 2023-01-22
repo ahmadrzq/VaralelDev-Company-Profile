@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\MasterData\Intro::factory(5)->create();
         \App\Models\MasterData\Service::factory(6)->create();
         \App\Models\MasterData\About::factory(3)->create();
+        \App\Models\MasterData\Fact::factory(4)->create();
 
         $this->call([
             SkillSeeder::class,

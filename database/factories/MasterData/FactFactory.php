@@ -17,7 +17,8 @@ class FactFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->words(rand(1,2),true),
+            'value' => $this->faker->numberBetween(1,100)
         ];
     }
 }
