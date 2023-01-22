@@ -2,6 +2,7 @@
 
 namespace Database\Factories\MasterData;
 
+use App\Models\MasterData\About;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AboutFactory extends Factory
 {
+    protected $model = About::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +19,8 @@ class AboutFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->words(2,true),
+            'description' => $this->faker->unique()->sentences(3,true),
         ];
     }
 }

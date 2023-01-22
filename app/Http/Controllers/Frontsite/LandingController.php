@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\MasterData\Intro;
 use App\Models\MasterData\Service;
 use App\Http\Controllers\Controller;
+use App\Models\MasterData\About;
 
 class LandingController extends Controller
 {
@@ -23,7 +24,10 @@ class LandingController extends Controller
         $services = Service::all();
         $filter_services = Service::orderBy('created_at','desc')->limit(3)->get();
 
-        return view('pages.frontsite.index', compact('intros','services', 'filter_services'));
+        //table abouts
+        $abouts = About::all();
+
+        return view('pages.frontsite.index', compact('intros','services', 'filter_services','abouts'));
     }
 
     /**
