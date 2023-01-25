@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontsite;
 
 use App\Http\Controllers\Controller;
 use App\Models\MasterData\About;
+use App\Models\MasterData\Client;
 use App\Models\MasterData\Fact;
 use App\Models\MasterData\Intro;
 use App\Models\MasterData\Service;
@@ -35,7 +36,10 @@ class LandingController extends Controller
         // table facts
         $facts = Fact::all();
 
-        return view('pages.frontsite.index', compact('intros', 'services', 'filter_services', 'abouts', 'skills', 'facts'));
+        // table facts
+        $clients = Client::all();
+
+        return view('pages.frontsite.index', compact('intros', 'services', 'filter_services', 'abouts', 'skills', 'facts', 'clients'));
     }
 
     /**
