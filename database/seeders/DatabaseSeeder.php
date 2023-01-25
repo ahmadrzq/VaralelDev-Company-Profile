@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+use App\Models\MasterData\Fact;
 use Illuminate\Database\Seeder;
 use App\Models\MasterData\About;
 use App\Models\MasterData\Intro;
+use App\Models\MasterData\Client;
 use Database\Seeders\SkillSeeder;
 use App\Models\MasterData\Service;
 
@@ -22,6 +25,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\MasterData\Service::factory(6)->create();
         \App\Models\MasterData\About::factory(3)->create();
         \App\Models\MasterData\Fact::factory(4)->create();
+        \App\Models\MasterData\Client::factory(4)->create();
 
         $this->call([
             SkillSeeder::class,
