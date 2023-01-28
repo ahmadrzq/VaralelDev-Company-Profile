@@ -3,7 +3,7 @@
 
 <head>
     @include('includes.frontsite.meta')
-    <title>VaralelDev</title>
+    <title>Raverse.dev</title>
     @include('includes.frontsite.style')
 </head>
 
