@@ -29,11 +29,9 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>Contact Us</h4>
                     <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        {{$contacts[0]->address ?? ''}}<br>
+                        <strong>Phone:</strong> {{$contacts[0]->phone ?? ''}}<br>
+                        <strong>Email:</strong> {{$contacts[0]->email ?? ''}}<br>
                     </p>
 
                     <div class="social-links">
