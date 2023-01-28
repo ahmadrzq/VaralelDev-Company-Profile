@@ -10,6 +10,7 @@ use App\Models\MasterData\About;
 use App\Models\MasterData\Intro;
 use App\Models\MasterData\Client;
 use Database\Seeders\SkillSeeder;
+use App\Models\MasterData\Contact;
 use App\Models\MasterData\Service;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\MasterData\About::factory(3)->create();
         \App\Models\MasterData\Fact::factory(4)->create();
         \App\Models\MasterData\Client::factory(4)->create();
+        \App\Models\MasterData\Contact::factory(1)->create();
 
         $this->call([
             SkillSeeder::class,
