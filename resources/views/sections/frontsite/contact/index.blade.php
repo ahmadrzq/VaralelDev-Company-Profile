@@ -9,13 +9,14 @@
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
+        @forelse ($contacts as $key => $contact_item)
         <div class="row contact-info">
 
             <div class="col-md-4">
                 <div class="contact-address">
                     <i class="ion-ios-location-outline"></i>
                     <h3>Address</h3>
-                    <address>A108 Adam Street, NY 535022, USA</address>
+                    <address>{{$contact_item->address ?? ''}}</address>
                 </div>
             </div>
 
@@ -23,7 +24,7 @@
                 <div class="contact-phone">
                     <i class="ion-ios-telephone-outline"></i>
                     <h3>Phone Number</h3>
-                    <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+                    <p><a href="tel:{{$contact_item->phone ?? ''}}">{{$contact_item->phone ?? ''}}</a></p>
                 </div>
             </div>
 
@@ -31,11 +32,14 @@
                 <div class="contact-email">
                     <i class="ion-ios-email-outline"></i>
                     <h3>Email</h3>
-                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                    <p><a href="mailto:{{$contact_item->email ?? ''}}">{{$contact_item->email ?? ''}}</a></p>
                 </div>
             </div>
 
         </div>
+        @empty
+
+        @endforelse
 
         <div class="form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
